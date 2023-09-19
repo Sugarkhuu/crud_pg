@@ -8,14 +8,14 @@ services:
       POSTGRES_USER: myuser
       POSTGRES_PASSWORD: mypassword
     ports:
-      - "5055:5432"
+      - "5056:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
   flask_app:
     build: ./flask_app
     ports:
-      - "5000:5000"
+      - "5050:5000"
     depends_on:
       - postgres  # Make the Flask app depend on the PostgreSQL service
     environment:
